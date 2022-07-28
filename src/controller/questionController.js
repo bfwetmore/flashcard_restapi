@@ -1,4 +1,4 @@
-module.exports = class QuestionController {
+export default class QuestionController {
 
     constructor(FlashcardService) {
         this.flashcardService = FlashcardService;
@@ -12,4 +12,4 @@ module.exports = class QuestionController {
         const flashcard = await this.flashcardService.generateRandomQuestion();
         return {flashcardId: flashcard[0].id, question: flashcard[0].question};
     }
-};
+}

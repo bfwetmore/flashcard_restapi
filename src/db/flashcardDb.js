@@ -1,7 +1,7 @@
-const db = require('./connection');
+import db from './connection.js';
 const {Flashcard} = db.models;
 
-module.exports = class FlashcardDB {
+export default class FlashcardDB {
 
     /**
      * Make a call to the Database to SELECT a Row by based on query options.
@@ -19,4 +19,4 @@ module.exports = class FlashcardDB {
     async getFlashcardTable() {
         return await Flashcard.findAll();
     }
-};
+}

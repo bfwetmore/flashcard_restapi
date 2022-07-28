@@ -1,4 +1,4 @@
-module.exports = class FlashcardActions {
+export default class FlashcardActions {
 
     /**
      * Returns a Random ID number based on Total count of Flashcard Objects in the Database.
@@ -7,4 +7,4 @@ module.exports = class FlashcardActions {
     async getRandomNumber(numberOfFlashcards) {
         return Math.floor(Math.random() * numberOfFlashcards + 1);
     }
-};
+}

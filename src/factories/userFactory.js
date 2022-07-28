@@ -1,9 +1,9 @@
-const UserService = require('../services/userService');
-const UserActions = require('../actions/userActions');
-const UserController = require('../controller/userController');
-const UserDB = require('../db/userDb');
+import UserService from '../services/userService.js';
+import UserActions from '../actions/userActions.js';
+import UserController from '../controller/userController.js';
+import UserDB from '../db/userDb.js';
 
-module.exports = class UserFactory {
+export default class UserFactory {
     async createNewUser(req) {
         return await new UserController(new UserService(new UserDB(), new UserActions())).createNewUser(req);
     }
@@ -11,4 +11,4 @@ module.exports = class UserFactory {
     async userLogin(req) {
         return await new UserController(new UserService(new UserDB(), new UserActions())).userLogin(req);
     }
-};
+}

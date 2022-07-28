@@ -1,6 +1,6 @@
-const bcrypt = require("bcrypt");
+import bcrypt from 'bcrypt';
 
-module.exports = class UserActions {
+export default class UserActions {
 
     /**
      * Hash submitted text.
@@ -32,4 +32,4 @@ module.exports = class UserActions {
             throw new Error("Use 8 characters or more for your password");
         }
     }
-};
+}

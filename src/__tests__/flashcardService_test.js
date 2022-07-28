@@ -1,6 +1,7 @@
+import FlashcardService from '../services/flashcardService';
+import MockFlashcardDb from '../db/__mocks__/flashcardDb';
+
 describe("Flashcard Service", () => {
-    const FlashcardService = require('../services/flashcardService');
-    const MockFlashcardDb = require('../db/__mocks__/flashcardDb');
 
     test("getFlashcardById should return an array with one flashcard object.", async () => {
         const flashcardService = new FlashcardService(new MockFlashcardDb());

@@ -1,4 +1,4 @@
-module.exports = class UserController {
+export default class UserController {
 
     constructor(userService) {
         this.userService = userService;
@@ -21,4 +21,4 @@ module.exports = class UserController {
     async userLogin(req) {
         return await this.userService.checkUserCredentials(req.body.username, req.body.password);
     }
-};
+}

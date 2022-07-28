@@ -1,4 +1,4 @@
-module.exports = class answerController {
+export default class answerController {
 
     constructor(flashcardService) {
         this.flashcardService = flashcardService;
@@ -13,4 +13,4 @@ module.exports = class answerController {
         const flashcard = await this.flashcardService.getFlashcardById(req.params['questionId']);
         return flashcard[0].answer;
     }
-};
+}
