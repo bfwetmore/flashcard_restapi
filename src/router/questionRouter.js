@@ -1,5 +1,5 @@
-const express = require('express');
-const FlashcardFactory = require('../factories/flashcardFactory');
+import express from 'express';
+import FlashcardFactory from '../factories/flashcardFactory.js';
 
 const questionRouter = express.Router();
 
@@ -8,4 +8,4 @@ questionRouter.get('/randomQuestion', async (req, res) => {
     res.json(await questionFactory.getRandomQuestion());
 });
 
-module.exports = questionRouter;
+export default questionRouter;

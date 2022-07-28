@@ -1,5 +1,5 @@
-const express = require('express');
-const FlashcardFactory = require('../factories/flashcardFactory');
+import express from 'express';
+import FlashcardFactory from '../factories/flashcardFactory.js';
 
 const answerRouter = express.Router();
 
@@ -9,4 +9,4 @@ answerRouter.get('/answer/:questionId', async (req, res) => {
 
 });
 
-module.exports = answerRouter;
+export default answerRouter;

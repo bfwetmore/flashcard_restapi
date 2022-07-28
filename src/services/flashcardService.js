@@ -1,4 +1,4 @@
-module.exports = class FlashcardService {
+export default class FlashcardService {
 
     constructor(flashcardDB, flashcardActions) {
         this.flashcardDB = flashcardDB;
@@ -38,4 +38,4 @@ module.exports = class FlashcardService {
     async getAllFlashcards() {
         return await this.flashcardDB.getFlashcardTable();
     }
-};
+}

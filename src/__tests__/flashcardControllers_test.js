@@ -1,9 +1,12 @@
+import MockFlashcardService from '../services/__mocks__/flashcardService.js';
+import MockFlashcardActions from '../actions/__mocks__/flashcardActions.js';
+import QuestionController from '../controller/questionController.js';
+import FlashcardController from "../controller/flashcardController";
+import AnswerController from '../controller/answerController';
+
 describe("Controllers", () => {
-    const MockFlashcardService = require('../services/__mocks__/flashcardService');
-    const MockFlashcardActions = require('../actions/__mocks__/flashcardActions');
 
     describe("Question Controller", () => {
-        const QuestionController = require('../controller/questionController');
 
         test("getRandomQuestion should return an object containing a number and string.", async () => {
             const questionController = new QuestionController(new MockFlashcardService(new MockFlashcardActions()));
@@ -15,7 +18,6 @@ describe("Controllers", () => {
     });
 
     describe("Answer Controller", () => {
-        const AnswerController = require('../controller/answerController');
 
         test("getAnswer should return a string containing answer only.", async () => {
             const answerController = await new AnswerController(new MockFlashcardService());
@@ -28,7 +30,6 @@ describe("Controllers", () => {
     });
 
     describe("Flashcard Controller", () => {
-        const FlashcardController = require("../controller/flashcardController");
 
         test("getFlashcard should return an array with one object containing all flashcard Values.", async () => {
             const flashcardController = new FlashcardController(new MockFlashcardService());

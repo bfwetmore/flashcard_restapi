@@ -1,4 +1,4 @@
-module.exports = class FlashcardDB {
+export default class FlashcardDB {
     async getFlashcardRow(options) {
         if (options.where.id === 2) {
             return [{
@@ -44,4 +44,4 @@ module.exports = class FlashcardDB {
             }
         ];
     }
-};
+}

@@ -1,7 +1,7 @@
-const db = require('./connection');
+import db from './connection.js';
 const {Users} = db.models;
 
-module.exports = class UserDB {
+export default class UserDB {
     /**
      * INSERTS a new user to the database.
      * @param username
@@ -34,4 +34,4 @@ module.exports = class UserDB {
             }
         });
     }
-};
+}

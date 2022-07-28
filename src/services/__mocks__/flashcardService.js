@@ -1,4 +1,4 @@
-module.exports = class FlashcardService {
+export default class FlashcardService {
     getFlashcardById(flashcardId) {
         return [{
             id: flashcardId,
@@ -51,4 +51,4 @@ module.exports = class FlashcardService {
             }
         ];
     }
-};
+}

@@ -1,4 +1,4 @@
-module.exports = class FlashcardService {
+export default class FlashcardService {
 
     constructor(userDB, userActions) {
         this.userDB = userDB;
@@ -44,4 +44,4 @@ module.exports = class FlashcardService {
             return err.message;
         }
     }
-};
+}

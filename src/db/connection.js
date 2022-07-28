@@ -1,6 +1,6 @@
-const {Sequelize} = require('sequelize');
-const fs = require("fs");
-require('dotenv').config();
+import {Sequelize} from 'sequelize';
+import fs from "fs";
+import 'dotenv/config';
 
 const user = process.env.DBUSER;
 const database = process.env.DATABASE;
@@ -26,8 +26,10 @@ const db = {
     Sequelize,
     models: {},
 };
+import Flashcard from './models/flashcard.js';
+import Users from './models/user.js';
 
-db.models.Flashcard = require('./models/flashcard')(sequelize);
-db.models.Users = require('./models/user')(sequelize);
+db.models.Flashcard = (Flashcard)(sequelize);
+db.models.Users = (Users)(sequelize);
 
-module.exports = db;
+export default db;

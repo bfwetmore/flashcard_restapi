@@ -1,5 +1,5 @@
-const express = require('express');
-const FlashcardFactory = require('../factories/flashcardFactory');
+import express from 'express';
+import FlashcardFactory from '../factories/flashcardFactory.js';
 
 const flashcardRouter = express.Router();
 
@@ -9,4 +9,4 @@ flashcardRouter.get('/flashcard/:flashcardId', async (req, res) => {
 
 });
 
-module.exports = flashcardRouter;
+export default flashcardRouter;

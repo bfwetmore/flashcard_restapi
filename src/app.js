@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
 
-const flashcardRouter = require('./router/flashcardRouter');
-const questionRouter = require('./router/questionRouter');
-const answerRouter = require('./router/answerRouter');
-const userRouter = require('./router/userRouter');
+import flashcardRouter from './router/flashcardRouter.js';
+import questionRouter from './router/questionRouter.js';
+import answerRouter from './router/answerRouter.js';
+import userRouter from './router/userRouter.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -30,6 +30,7 @@ app.use(
      * @param {Object} res response
      * @param {Object} next next
      */
+        // eslint-disable-next-line no-unused-vars
     (err, req, res, next) => {
         res.status(err.status || 500);
         res.json({

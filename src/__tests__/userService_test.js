@@ -1,8 +1,8 @@
-describe('User Service', () => {
+import UserService from '../services/userService';
+import UserDB from '../db/userDb';
+import UserActions from '../actions/userActions';
 
-    const UserService = require('../services/userService');
-    const UserDB = require('../db/userDb');
-    const UserActions = require('../actions/userActions');
+describe('User Service', () => {
 
     test('createUser calls each method once.', async () => {
         const hashTextMock = jest
@@ -26,6 +26,7 @@ describe('User Service', () => {
     });
 
     describe("checkUserCredentials", () => {
+
         const selectUserMock = jest
             .spyOn(UserDB.prototype, 'selectUser')
             .mockImplementation(() => {
@@ -41,16 +42,13 @@ describe('User Service', () => {
         const userService = new UserService(new UserDB(), new UserActions());
 
         test('checkUserCredentials calls each method once.', async () => {
-
             await userService.checkUserCredentials("test", "test");
-
             expect(selectUserMock).toHaveBeenCalledTimes(1);
             expect(authenticatePasswordMock);
         });
 
         test('checkUserCredentials should return Incorrect Username message if authentication is false.', async () => {
             const returnedFalse = await userService.checkUserCredentials("test", "test");
-
             expect(returnedFalse).toEqual({
                 "message": "Incorrect Username or Password"
             });
@@ -59,7 +57,6 @@ describe('User Service', () => {
         test('checkUserCredentials should return Login Successful message if authentication is true.', async () => {
             authenticatePasswordMock.mockImplementation(() => true);
             const returnedFalse = await userService.checkUserCredentials("test", "test");
-
             expect(returnedFalse).toEqual({
                 "message": "Login Successful!"
             });
